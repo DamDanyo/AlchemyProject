@@ -26,7 +26,7 @@ public class ConnectionUtil {
 		
 		//I'm going to put the credentials in Strings, and use those strings in a method that gets connections
 		//for the url, the only thing that should change for your own projects is your schema name (krusty_krab here)
-		String url = "jdbc:postgresql://35.185.214.71:5432/postgres?currentSchema=alchemyManagementSystem";
+		String url = "jdbc:postgresql://35.185.214.71:5432/alchemyManagementSystem?currentSchema=public";
 		String username = "postgres"; //this should not ever change
 		String password = "alchempw"; //password to use for postgresql
 		
