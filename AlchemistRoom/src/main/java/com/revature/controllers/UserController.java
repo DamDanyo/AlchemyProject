@@ -32,8 +32,8 @@ public class UserController {
 	
 	
 		
-	@PostMapping
-	public ResponseEntity<AlchemistUser> findByUsernameAndPassword(@RequestBody LoginDTO lDTO) {
+	@PostMapping(value="/login")
+	public ResponseEntity<AlchemistUser> login(@RequestBody LoginDTO lDTO) {
 		
 		
 		
