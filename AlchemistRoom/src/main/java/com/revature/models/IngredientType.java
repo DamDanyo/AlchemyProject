@@ -1,60 +1,66 @@
 package com.revature.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name="ingredient_types")
+@Table(name="types")
 @Component
 public class IngredientType {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int type_id;
+	private int typeId;
+	
 	@Column
-	private String type_name;
-
+	private String typeName;
+	
 	//Boilerplate
 	public IngredientType() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	//For reading
-	public IngredientType(int type_id, String type_name) {
+
+	public IngredientType(int typeId, String typeName) {
 		super();
-		this.type_id = type_id;
-		this.type_name = type_name;
+		this.typeId = typeId;
+		this.typeName = typeName;
 	}
-	//For inserting
-	public IngredientType(String type_name) {
+
+	public IngredientType(String typeName) {
 		super();
-		this.type_name = type_name;
+		this.typeName = typeName;
 	}
-	
-	//Getters and Setters
-	public int getType_id() {
-		return type_id;
+
+	public int getTypeId() {
+		return typeId;
 	}
-	public void setType_id(int type_id) {
-		this.type_id = type_id;
+
+	public void setTypeId(int typeId) {
+		this.typeId = typeId;
 	}
-	public String getType_name() {
-		return type_name;
+
+	public String getTypeName() {
+		return typeName;
 	}
-	public void setType_name(String type_name) {
-		this.type_name = type_name;
+
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "IngredientType [type_id=" + type_id + ", type_name=" + type_name + "]";
+		return "IngredientType [typeId=" + typeId + ", typeName=" + typeName + "]";
 	}
-	
-	
+
 }

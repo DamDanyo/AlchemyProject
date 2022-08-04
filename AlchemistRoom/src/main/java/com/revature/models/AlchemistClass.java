@@ -10,54 +10,53 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name="alchemist_class")
+@Table(name="class")
 @Component
 public class AlchemistClass {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int type_id;
+	private int classId;
 	
 	@Column(nullable=false)
-	private String class_name;
+	private String className;
 	
 	//Boilerplate--------------
 	public AlchemistClass() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	//For reading
-	public AlchemistClass(int type_id, String class_name) {
+
+	public AlchemistClass(int classId, String className) {
 		super();
-		this.type_id = type_id;
-		this.class_name = class_name;
+		this.classId = classId;
+		this.className = className;
 	}
-	//For inserting
-	public AlchemistClass(String class_name) {
+
+	public AlchemistClass(String className) {
 		super();
-		this.class_name = class_name;
+		this.className = className;
 	}
-	
-	//Setters and Getters------
-	public int getType_id() {
-		return type_id;
+
+	public int getClassId() {
+		return classId;
 	}
-	public void setType_id(int type_id) {
-		this.type_id = type_id;
+
+	public void setClassId(int classId) {
+		this.classId = classId;
 	}
-	public String getClass_name() {
-		return class_name;
+
+	public String getClassName() {
+		return className;
 	}
-	public void setClass_name(String class_name) {
-		this.class_name = class_name;
+
+	public void setClassName(String className) {
+		this.className = className;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "AlchemistClass [type_id=" + type_id + ", class_name=" + class_name + "]";
+		return "AlchemistClass [classId=" + classId + ", className=" + className + "]";
 	}
-	
-	
 
-	
 }

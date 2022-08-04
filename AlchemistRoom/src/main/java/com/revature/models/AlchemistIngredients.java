@@ -12,69 +12,69 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name="alchemist_ingredients")
+@Table(name="ingredients")
 @Component
 public class AlchemistIngredients {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int ingredient_id;
+	private int ingredientId;
 	
 	@Column
-	private String ingredient_name;
+	private String ingredientName;
 	
 	@ManyToOne
-	@JoinColumn(name="type_id",nullable=false)
-	private IngredientType type;
+	@JoinColumn(name="typeId",nullable=false)
+	private IngredientType typeFk;
 	
 	//Boilerplate-----------------------------
 	public AlchemistIngredients() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	//For Reading
-	public AlchemistIngredients(int ingredient_id, String ingredient_name, IngredientType type) {
+
+	public AlchemistIngredients(int ingredientId, String ingredientName, IngredientType typeFk) {
 		super();
-		this.ingredient_id = ingredient_id;
-		this.ingredient_name = ingredient_name;
-		this.type = type;
+		this.ingredientId = ingredientId;
+		this.ingredientName = ingredientName;
+		this.typeFk = typeFk;
 	}
-	//For Inserting
-	public AlchemistIngredients(String ingredient_name, IngredientType type) {
+
+	public AlchemistIngredients(String ingredientName, IngredientType typeFk) {
 		super();
-		this.ingredient_name = ingredient_name;
-		this.type = type;
-	}
-	
-	//Getters and Setters
-	public int getIngredient_id() {
-		return ingredient_id;
+		this.ingredientName = ingredientName;
+		this.typeFk = typeFk;
 	}
 
-	public void setIngredient_id(int ingredient_id) {
-		this.ingredient_id = ingredient_id;
+	public int getIngredientId() {
+		return ingredientId;
 	}
 
-	public String getIngredient_name() {
-		return ingredient_name;
+	public void setIngredientId(int ingredientId) {
+		this.ingredientId = ingredientId;
 	}
 
-	public void setIngredient_name(String ingredient_name) {
-		this.ingredient_name = ingredient_name;
+	public String getIngredientName() {
+		return ingredientName;
 	}
 
-	public IngredientType getType() {
-		return type;
+	public void setIngredientName(String ingredientName) {
+		this.ingredientName = ingredientName;
 	}
 
-	public void setType(IngredientType type) {
-		this.type = type;
+	public IngredientType getTypeFk() {
+		return typeFk;
 	}
+
+	public void setTypeFk(IngredientType typeFk) {
+		this.typeFk = typeFk;
+	}
+
 	@Override
 	public String toString() {
-		return "AlchemistIngredients [ingredient_id=" + ingredient_id + ", ingredient_name=" + ingredient_name
-				+ ", type=" + type + "]";
-	}	
-	
+		return "AlchemistIngredients [ingredientId=" + ingredientId + ", ingredientName=" + ingredientName + ", typeFk="
+				+ typeFk + "]";
+	}
+
 	
 }
