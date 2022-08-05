@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Entity
@@ -18,49 +19,46 @@ public class AlchemistUser {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int userId;
+	private int userid;
 	
 	@Column(nullable=false)
 	private String username;
 	
 	@Column(nullable=false)
 	private String password;
+		
+	@Column
+	@Value("false")
+	private boolean isadmin;
 	
-	
-
-	@ManyToOne (fetch = FetchType.EAGER)
-	@JoinColumn(name="classId",nullable=false)
-	private AlchemistClass classFk;
-	
-	//Boilerplate-----------------------------
+	//-------------------Constructors
 	public AlchemistUser() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	public AlchemistUser(int userId, String username, String password, AlchemistClass classFk) {
+	
+	//For getting
+	public AlchemistUser(int userid, String username, String password, boolean isadmin) {
 		super();
-		this.userId = userId;
+		this.userid = userid;
 		this.username = username;
 		this.password = password;
-		this.classFk = classFk;
+		this.isadmin = isadmin;
 	}
-
-	public AlchemistUser(String username, String password, AlchemistClass classFk) {
+	//For inserting
+	public AlchemistUser(String username, String password, boolean isadmin) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.classFk = classFk;
+		this.isadmin = isadmin;
 	}
-	
-	
-
-	public int getUserId() {
-		return userId;
+	//-------------------Setters and Getters
+	public int getUserid() {
+		return userid;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
 
 	public String getUsername() {
@@ -79,11 +77,20 @@ public class AlchemistUser {
 		this.password = password;
 	}
 
-	public AlchemistClass getClassFk() {
-		return classFk;
+	public boolean isIsadmin() {
+		return isadmin;
 	}
 
-	public void setClassFk(AlchemistClass classFk) {
-		this.classFk = classFk;
+	public void setIsadmin(boolean isadmin) {
+		this.isadmin = isadmin;
 	}
+
+	@Override
+	public String toString() {
+		return "AlchemistUser [userid=" + userid + ", username=" + username + ", password=" + password + ", isadmin="
+				+ isadmin + "]";
+	}
+	
+	
+	
 }
