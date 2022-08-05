@@ -41,4 +41,77 @@ public class Order {
 	@ElementCollection(targetClass=Potion.class)
 	private List<Potion> items;
 	
+	//-------------------Constructors
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	//for getting
+	public Order(int orderid, AlchemistUser useridFK, String orderaddress, int ordertotal, List<Potion> items) {
+		super();
+		this.orderid = orderid;
+		this.useridFK = useridFK;
+		this.orderaddress = orderaddress;
+		this.ordertotal = ordertotal;
+		this.items = items;
+	}
+	//for inserting
+	public Order(AlchemistUser useridFK, String orderaddress, int ordertotal, List<Potion> items) {
+		super();
+		this.useridFK = useridFK;
+		this.orderaddress = orderaddress;
+		this.ordertotal = ordertotal;
+		this.items = items;
+	}
+	//-------------------Setters and Getters
+
+	public int getOrderid() {
+		return orderid;
+	}
+
+	public void setOrderid(int orderid) {
+		this.orderid = orderid;
+	}
+
+	public AlchemistUser getUseridFK() {
+		return useridFK;
+	}
+
+	public void setUseridFK(AlchemistUser useridFK) {
+		this.useridFK = useridFK;
+	}
+
+	public String getOrderaddress() {
+		return orderaddress;
+	}
+
+	public void setOrderaddress(String orderaddress) {
+		this.orderaddress = orderaddress;
+	}
+
+	public int getOrdertotal() {
+		return ordertotal;
+	}
+
+	public void setOrdertotal(int ordertotal) {
+		this.ordertotal = ordertotal;
+	}
+
+	public List<Potion> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Potion> items) {
+		this.items = items;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [orderid=" + orderid + ", useridFK=" + useridFK + ", orderaddress=" + orderaddress
+				+ ", ordertotal=" + ordertotal + ", items=" + items + "]";
+	}
+	
+	
+	
+	
 }
