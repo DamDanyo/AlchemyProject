@@ -14,15 +14,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class Potion {
 	
+	//has to match api
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int potionid;
+	private int id;
 	
 	@Column
-	private String potionname;
+	private String name;
 	
-	@Column
-	private String potiondescription;
+	@Column(name="description",columnDefinition = "varchar(500) default 'Unknown'" )
+	private String description;
 	
 	@Column
 	private int potionvalue;
@@ -35,48 +36,56 @@ public class Potion {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	//For getting
-	public Potion(int potionid, String potionname, String potiondescription, int potionvalue, int potionquantity) {
+	//For getting on front end
+	public Potion(int id, String name, String description, int potionvalue, int potionquantity) {
 		super();
-		this.potionid = potionid;
-		this.potionname = potionname;
-		this.potiondescription = potiondescription;
+		this.id = id;
+		this.name = name;
+		this.description = description;
 		this.potionvalue = potionvalue;
 		this.potionquantity = potionquantity;
 	}
 	//For inserting
-	public Potion(String potionname, String potiondescription, int potionvalue, int potionquantity) {
+	public Potion(String name, String description, int potionvalue, int potionquantity) {
 		super();
-		this.potionname = potionname;
-		this.potiondescription = potiondescription;
+		this.name = name;
+		this.description = description;
 		this.potionvalue = potionvalue;
 		this.potionquantity = potionquantity;
 	}
-	
+	//For getting from api
+		public Potion(int id, String name, String description) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+	}
+		
 	//-------------------Setters and Getters
-	public int getPotionid() {
-		return potionid;
+	public int getId() {
+		return id;
 	}
-	public void setPotionid(int potionid) {
-		this.potionid = potionid;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getPotionname() {
-		return potionname;
+	public String getName() {
+		return name;
 	}
-	public void setPotionname(String potionname) {
-		this.potionname = potionname;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getPotiondescription() {
-		return potiondescription;
+	public String getDescription() {
+		return description;
 	}
-	public void setPotiondescription(String potiondescription) {
-		this.potiondescription = potiondescription;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public int getPotionvalue() {
 		return potionvalue;
 	}
 	public void setPotionvalue(int potionvalue) {
-		this.potionvalue = potionvalue;
+		this.potionvalue = potionvalue*this.id;
 	}
 	public int getPotionquantity() {
 		return potionquantity;
@@ -86,8 +95,8 @@ public class Potion {
 	}
 	@Override
 	public String toString() {
-		return "Potion [potionid=" + potionid + ", potionname=" + potionname + ", potiondescription="
-				+ potiondescription + ", potionvalue=" + potionvalue + ", potionquantity=" + potionquantity + "]";
+		return "Potion [id=" + id + ", name=" + name + ", description="
+				+ description + ", potionvalue=" + potionvalue + ", potionquantity=" + potionquantity + "]";
 	}
 	
 	
