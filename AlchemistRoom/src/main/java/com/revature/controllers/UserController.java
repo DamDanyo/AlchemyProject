@@ -106,6 +106,19 @@ public class UserController {
 	}
 	
 	
+	@PostMapping(value=("{id}/updateUser"))
+	public ResponseEntity<AlchemistUser> updateUser(@PathVariable int id, @RequestBody AlchemistUser userDetails){
+		Optional<AlchemistUser> userOptional = uDAO.findById(id);
+		if(userOptional.isPresent()) {
+			AlchemistUser user = userOptional.get();
+			user.setUsername(userDetails.getUsername());
+			user.setPassword(userDetails.getPassword());
+			return ResponseEntity.ok(uDAO.save(user));
+		}
+		return ResponseEntity.badRequest().build();
+	}
+	
+	
 	
 
 }
