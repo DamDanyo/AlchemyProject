@@ -105,7 +105,8 @@ public class UserController {
 		
 	}
 	
-	
+	//this method will be used to update user username and password
+	//path is POST - http://localhost:5555/data/user/{id}/updateUser
 	@PostMapping(value=("{id}/updateUser"))
 	public ResponseEntity<AlchemistUser> updateUser(@PathVariable int id, @RequestBody AlchemistUser userDetails){
 		Optional<AlchemistUser> userOptional = uDAO.findById(id);
