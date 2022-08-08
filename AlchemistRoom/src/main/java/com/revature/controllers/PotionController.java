@@ -70,11 +70,14 @@ public class PotionController {
 	
 	@PutMapping(value="update")
 	public ResponseEntity<Potion> updatePotion(@RequestBody Potion p){
-		Potion updatePotion = pDAO.save(p);
-		if(updatePotion == null) {
+		Optional<Potion> upPotion = pDAO.findById(p.getId());
+		if(upPotion.isPresent()){
+			Potion updatePotion = pDAO.save(p);		
+			return ResponseEntity.accepted().body(updatePotion);
+		} else {
 			return ResponseEntity.badRequest().build();
 		}
-		return ResponseEntity.accepted().body(updatePotion);
+
 	}
 	
 	@DeleteMapping(value="delete/{id}")
@@ -140,6 +143,7 @@ public class PotionController {
 		List<Potion> updates = new ArrayList<Potion>();
 		for(Potion p:potionApi) {
 			if(potionList.contains(p)==false) {
+
 				p.setPotionquantity(0);
 				p.setPotionvalue(10);
 				if(p.getDescription()=="") {
