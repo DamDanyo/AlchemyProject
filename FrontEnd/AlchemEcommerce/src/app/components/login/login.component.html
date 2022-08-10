@@ -1,0 +1,18 @@
+<div class="container"> <video onloadedmetadata="this.muted=true" autoplay loop id="myVid">
+        <source src="../../../assets/Videos/Fire_41___45s___4k_res.mp4" type="video/mp4">
+    </video> </div>
+<div class="div" id="loginDiv">
+    <h1>Login</h1>
+
+    <form [formGroup]="loginForm" (submit)="userLogin()">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username" formControlName="username" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" formControlName="password" />
+        </div><button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+</div>

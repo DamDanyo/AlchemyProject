@@ -1,0 +1,25 @@
+#myVid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+#loginDiv {
+  display: grid;
+  position: fixed;
+  justify-content: center;
+  font-size: large;
+  width: 30vw;
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+}
+#loginBtn {
+  margin-top: 10px;
+}
+.container {
+  opacity: 0.9;
+}
