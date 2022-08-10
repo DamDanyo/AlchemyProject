@@ -1,0 +1,30 @@
+.grid-container{
+    display: inline-grid;
+    position: relative;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10%;
+    margin: 5%;
+}
+
+.potion-card{
+    text-align: center;
+    border-style: solid;
+    border-radius: 10%;
+    border-width: .1em;
+    color: aliceblue;
+    opacity: 80%;
+    background-color:gray;
+    
+}
+h2{
+    color: black;
+}
+p{
+    color:black
+}
+
+body{
+    background-image: url("../../../assets/Imgs/alchemy.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

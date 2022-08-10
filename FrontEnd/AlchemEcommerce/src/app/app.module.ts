@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { MainBrowserComponent } from './components/main-browser/main-browser.component';
+import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, CheckoutComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, CheckoutComponent, MainBrowserComponent, MainNavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
