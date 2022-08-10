@@ -43,7 +43,7 @@ public class PotionController {
 	
 	//Frontend Methods-----------------------------------
 	//Get all potions
-	@GetMapping(value="all")
+	@GetMapping(value="/all")
 	public ResponseEntity<List<Potion>> getAllPotion(){
 		return ResponseEntity.ok(pDAO.findAll());
 	}
