@@ -1,0 +1,48 @@
+
+<body>
+    
+
+<app-main-navbar></app-main-navbar>
+
+
+<div class="grid-container">
+
+    <!--Property binding, taking from TS and changing an HTML attribute -->
+    <div *ngFor="let potion of potionsArray" class="potion-card" > 
+     <!-- <div class = "potion-card"> -->
+        <!--String Interpolation, takeing from TS and rending it on the HTML
+        <h2>Potion #{{potion.id}}</h2>
+        <p>Potion Name: {{potion.name}}</p>
+        <p>Purchase: {{potion.purchase}}</p>  -->
+
+        <table>
+            <thead>
+            <th class="col-sm-1">Potion Name:</th>
+            <th class="col-sm-1">Description:</th>
+            </thead>
+            <tbody>
+                <td>{{potion.name}}</td>
+                <td>{{potion.description}}</td>
+                
+            </tbody>
+        </table>
+        <button class="button" (click)="addPotionsToInventory()">Add To Cart</button>
+    </div>
+    
+   <!-- <div class="potion-card" [hidden]="hiddenToggle">
+
+        <h2>Potion #{{potionsArray[1].id}}</h2>
+        <p>Potion Name: {{potionsArray[1].name}}</p>
+        <p>Purchase: {{potionsArray[1].purchase}}</p>
+        
+    </div>  -->
+
+    
+    
+</div>
+
+
+<!-- </body>  -->
+
+
+<router-outlet></router-outlet>
