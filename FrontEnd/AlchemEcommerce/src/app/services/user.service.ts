@@ -18,12 +18,10 @@ export class UserService {
     ) as Observable<UserCreds>;
   }
 
-  addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.addUrl, {
-      userid: 1,
-      username: '',
-      password: '',
-      isadmin: false,
-    }) as Observable<User>;
+  addUser(userCreds: UserCreds): Observable<UserCreds> {
+    return this.http.post<UserCreds>(
+      this.addUrl,
+      userCreds
+    ) as Observable<UserCreds>;
   }
 }

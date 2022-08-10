@@ -6,7 +6,7 @@
   min-height: 100%;
   z-index: -1;
 }
-#loginDiv {
+#login-div {
   display: grid;
   position: fixed;
   justify-content: center;
