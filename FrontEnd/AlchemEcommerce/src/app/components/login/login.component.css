@@ -23,3 +23,6 @@
 .container {
   opacity: 0.9;
 }
+#myBanner {
+  min-width: 100%;
+}
