@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+}
+.footer-wrapper {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: lightgray;
+  min-width: 100%;
+  margin: 0%;
+}
