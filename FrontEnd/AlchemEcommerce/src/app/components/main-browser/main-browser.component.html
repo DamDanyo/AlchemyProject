@@ -1,51 +1,39 @@
-
-
 <div>
 
-</div>
-<div>
-<body>
-    <app-main-navbar></app-main-navbar>
-    <div>
+    <body>
+        <app-main-navbar></app-main-navbar>
+        <div>
 
-    </div>
+        </div>
 
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
+        <div>
+            <app-navbar2></app-navbar2>
+        </div>
+        <div class="grid-container">
 
-    <div>
-        <app-navbar2></app-navbar2>
-    </div>
-<div class="grid-container">
-    
-    <!--Property binding, taking from TS and changing an HTML attribute -->
-    <div *ngFor="let potion of potionsArray" class="potion-card"  > 
-     <!-- <div class = "potion-card"> -->
-        <!--String Interpolation, takeing from TS and rending it on the HTML
+            <!--Property binding, taking from TS and changing an HTML attribute -->
+            <div *ngFor="let potion of potionsArray" class="potion-card">
+                <!-- <div class = "potion-card"> -->
+                <!--String Interpolation, takeing from TS and rending it on the HTML
         <h2>Potion #{{potion.id}}</h2>
         <p>Potion Name: {{potion.name}}</p>
         <p>Purchase: {{potion.purchase}}</p>  -->
-         
-        <table>
-            <thead>
-            <th class="col-sm-1" style="text-decoration:underline; color:rgb(14, 33, 87)">Potion Name:</th>
-            <th class="col-sm-1" style="text-decoration:underline; color:aliceblue">Description:</th>
-            </thead>
-            <tbody>
-                <td style="color:rgb(14, 33, 87)">{{potion.name}}</td>
-                <td style="color:aliceblue">{{potion.description}}</td>
-                
-            </tbody>
-        </table>
-        <button class="button" (click)="addPotionsToInventory()">Add To Cart</button>
-    </div>
-    
-   <!-- <div class="potion-card" [hidden]="hiddenToggle">
+
+                <table>
+                    <thead>
+                        <th class="col-sm-1" style="text-decoration:underline; color:rgb(14, 33, 87)">Potion Name:</th>
+                        <th class="col-sm-1" style="text-decoration:underline; color:aliceblue">Description:</th>
+                    </thead>
+                    <tbody>
+                        <td style="color:rgb(14, 33, 87)">{{potion.name}}</td>
+                        <td style="color:aliceblue">{{potion.description}}</td>
+
+                    </tbody>
+                </table>
+                <button class="button" (click)="addPotionsToInventory()">Add To Cart</button>
+            </div>
+
+            <!-- <div class="potion-card" [hidden]="hiddenToggle">
 
         <h2>Potion #{{potionsArray[1].id}}</h2>
         <p>Potion Name: {{potionsArray[1].name}}</p>
@@ -53,11 +41,11 @@
         
     </div>  -->
 
-    
-    
-</div>
-</body> 
-    
+
+
+        </div>
+    </body>
+
 
 
 </div>
