@@ -1,7 +1,7 @@
 .grid-container{
     display: inline-grid;
     position: relative;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); 
     gap: 10%;
     margin: 5%;
 }

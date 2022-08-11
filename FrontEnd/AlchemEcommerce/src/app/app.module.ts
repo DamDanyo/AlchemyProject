@@ -11,6 +11,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { MainBrowserComponent } from './components/main-browser/main-browser.component';
 import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
 
+
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent, CheckoutComponent, MainBrowserComponent, MainNavbarComponent],
   imports: [

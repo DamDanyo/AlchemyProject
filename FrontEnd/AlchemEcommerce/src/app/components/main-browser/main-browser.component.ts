@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Potions } from 'src/app/models/potions';
 import { PotionsService } from 'src/app/services/potions.service';
 
+
+
 @Component({
   selector: 'app-main-browser',
   templateUrl: './main-browser.component.html',
@@ -174,3 +176,6 @@ export class MainBrowserComponent implements OnInit {
   }
 
 }
+
+  
+  
