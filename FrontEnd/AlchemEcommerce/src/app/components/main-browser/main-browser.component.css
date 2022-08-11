@@ -1,9 +1,14 @@
 .grid-container{
     display: inline-grid;
     position: relative;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); 
     gap: 10%;
     margin: 5%;
+    background-image: url("../../../assets/Imgs/alchemy2.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .potion-card{
@@ -25,6 +30,13 @@ p{
 
 body{
     background-image: url("../../../assets/Imgs/alchemy.jpg");
+    background-attachment: fixed;
+    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: 100%;
 }
+
+/* .img1{
+    background-image: url("../../../assets/Imgs/alchemy2.jpg");
+    padding: 20em;
+} */
