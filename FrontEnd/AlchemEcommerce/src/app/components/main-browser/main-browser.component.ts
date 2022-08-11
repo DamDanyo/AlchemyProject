@@ -119,11 +119,11 @@ export class MainBrowserComponent implements OnInit {
         //  console.log(this.potionsArray)
           var realNameArray = []
           for (let nameArray of this.potionsArray){
-           // console.log(nameArray)
+            console.log(nameArray)
             realNameArray.push({
               name:nameArray.name
           })
-        //  console.log(realNameArray)
+          //console.log(realNameArray)
           }
         
         } 
