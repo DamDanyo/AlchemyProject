@@ -14,47 +14,6 @@ export class MainBrowserComponent implements OnInit {
   //  //hidden toggle
   //  hiddenToggle:boolean = true
 
-   //4 browser objects that we will render onto our webpage
-  //  potion1 = {
-  //    id: 1,
-  //    name: "example",
-  //    purchase: "Yes/no"
-  //  }
- 
-  //  potion2 = {
-  //    id: 2,
-  //    name: "example2",
-  //    purchase: "Yes/no"
-  //  }
- 
-  //  potion3 = {
-  //    id: 3,
-  //    name: "example3",
-  //    purchase: "Yes/no"
-  //  }
- 
-  //  potion4 = {
-  //    id: 4,
-  //    name: "example4",
-  //    purchase: "Yes/no"
-  //  }
-  
-  //  potion5 = {
-  //    id: 5,
-  //    name: "example5",
-  //    purchase: "Yes/no"
-  //  }
- 
-  //  potion6 = {
-  //    id: 6,
-  //    name: "example6",
-  //    purchase: "Yes/no"
-  //  }
- 
-  //  //An array filled with the above browser objects
-  //  potionsArray = [this.potion1, this.potion2, this.potion3, this.potion4, this.potion5, this.potion6]
- 
-   
    
   public potionsArray:Potions[] = [];
   
@@ -140,9 +99,6 @@ export class MainBrowserComponent implements OnInit {
   //  )
   
 
-  purchasePotion(){
-     
-  }
 
   ngOnInit(): void {
 

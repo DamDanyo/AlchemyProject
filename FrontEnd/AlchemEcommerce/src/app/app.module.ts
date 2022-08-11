@@ -10,10 +10,11 @@ import { RegisterComponent } from './components/register/register.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { MainBrowserComponent } from './components/main-browser/main-browser.component';
 import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
+import { Navbar2Component } from './components/navbar2/navbar2.component';
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, CheckoutComponent, MainBrowserComponent, MainNavbarComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, CheckoutComponent, MainBrowserComponent, MainNavbarComponent, Navbar2Component],
   imports: [
     BrowserModule,
     AppRoutingModule,

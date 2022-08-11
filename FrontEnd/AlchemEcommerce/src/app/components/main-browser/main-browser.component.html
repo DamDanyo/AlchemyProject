@@ -1,12 +1,28 @@
 
+
+<div>
+
+</div>
+<div>
 <body>
-    
+    <app-main-navbar></app-main-navbar>
+    <div>
 
-<app-main-navbar></app-main-navbar>
+    </div>
 
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
 
+    <div>
+        <app-navbar2></app-navbar2>
+    </div>
 <div class="grid-container">
-
+    
     <!--Property binding, taking from TS and changing an HTML attribute -->
     <div *ngFor="let potion of potionsArray" class="potion-card"  > 
      <!-- <div class = "potion-card"> -->
@@ -14,7 +30,7 @@
         <h2>Potion #{{potion.id}}</h2>
         <p>Potion Name: {{potion.name}}</p>
         <p>Purchase: {{potion.purchase}}</p>  -->
-
+         
         <table>
             <thead>
             <th class="col-sm-1" style="text-decoration:underline; color:rgb(14, 33, 87)">Potion Name:</th>
@@ -40,9 +56,10 @@
     
     
 </div>
+</body> 
+    
 
 
-<!-- </body>  -->
-
+</div>
 
 <router-outlet></router-outlet>
