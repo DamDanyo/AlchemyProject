@@ -26,15 +26,15 @@ export class MainBrowserComponent implements OnInit {
       {next:(data)=>{
         this.potionsArray = data
         data.push()
-        console.log(this.potionsArray)
+       // console.log(this.potionsArray)
         var realNameArray = []
         for (let nameArray of this.potionsArray){
-          console.log(nameArray)
+        //  console.log(nameArray)
           realNameArray.push({
             name:nameArray.name,
             description:nameArray.description
         })
-        console.log(realNameArray)
+      //  console.log(realNameArray)
         }
       } 
       })
@@ -107,7 +107,7 @@ export class MainBrowserComponent implements OnInit {
       this.ps.getPotionFromApi("","").subscribe(
         (data:any) => {
           this.potionsArray = data.body;
-          console.log(this.potionsArray);
+       //   console.log(this.potionsArray);
         }
       )
     
@@ -116,14 +116,14 @@ export class MainBrowserComponent implements OnInit {
         {next:(data)=>{
           this.potionsArray = data
           data.push()
-          console.log(this.potionsArray)
+        //  console.log(this.potionsArray)
           var realNameArray = []
           for (let nameArray of this.potionsArray){
-            console.log(nameArray)
+           // console.log(nameArray)
             realNameArray.push({
               name:nameArray.name
           })
-          console.log(realNameArray)
+        //  console.log(realNameArray)
           }
         
         } 

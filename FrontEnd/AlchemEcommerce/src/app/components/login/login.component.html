@@ -1,23 +1,30 @@
-<img src="../../../assets/Imgs/Alchem E-commerce.png" alt="banner" id="myBanner">
+<video onloadedmetadata="this.muted=true" autoplay loop id="myVid">
+    <source src="../../../assets/Videos/Fire_41___45s___4k_res.mp4" type="video/mp4">
+</video>
 <div class="container">
+    <img src="../../../assets/Imgs/banner-tb-6.png" alt="banner" id="myBanner">
 
-    <video onloadedmetadata="this.muted=true" autoplay loop id="myVid">
-        <source src="../../../assets/Videos/Fire_41___45s___4k_res.mp4" type="video/mp4">
-    </video>
     <div class="div" id="login-div">
-        <h1>Login</h1>
+
+        <h2>Login</h2>
 
         <form [formGroup]="loginForm" (submit)="userLogin()">
+
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" class="form-control" id="username" formControlName="username" />
             </div>
+
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" class="form-control" id="password" formControlName="password" />
-            </div><button type="submit" class="btn btn-primary" routerLink="/main">Submit</button>
+            </div>
+
+            <button type="submit" class="button" id="login-btn" routerLink="/main">Submit</button>
+
             <a routerLink="/register">Create Account</a>
 
         </form>
     </div>
+
 </div>
