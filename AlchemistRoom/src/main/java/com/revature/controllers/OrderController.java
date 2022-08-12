@@ -53,7 +53,7 @@ public class OrderController {
 	}
 	
 	//Insert Order 
-	@PostMapping
+	@PostMapping(value="/insert")
 	public ResponseEntity<Order> addOrder(@RequestBody Order o){
 		
 		Order newOrder = oDAO.save(o);
