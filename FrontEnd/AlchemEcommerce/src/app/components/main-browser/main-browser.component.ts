@@ -17,6 +17,7 @@ export class MainBrowserComponent implements OnInit {
    
   public potionsArray:Potions[] = [];
   
+  //ptools = [Potions]
 
   constructor(private ps:PotionsService) { }
 
