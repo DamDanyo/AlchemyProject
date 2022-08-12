@@ -62,7 +62,7 @@ public class OrderController {
 	}
 	
 	//Insert Order 
-	@PostMapping
+	@PostMapping(value="/insert")
 	public ResponseEntity<Order> addOrder(@RequestBody Order o){
 			
 			//If total isn't provided
