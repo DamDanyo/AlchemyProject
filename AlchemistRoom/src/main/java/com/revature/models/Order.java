@@ -26,7 +26,7 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int orderid;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.MERGE)
 	@JoinColumn(name = "userid") //THIS is how you specify the PK that this FK is referring to
 	//the name attribute MUST be equal to the name of the id in the Trainer class (trainerId)
 	//IMPORTANT NOTE: we can't use @Column here, because @JoinColumn already makes it a column

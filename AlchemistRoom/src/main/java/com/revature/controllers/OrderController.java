@@ -28,13 +28,11 @@ import com.revature.models.Potion;
 public class OrderController {
 	
 	private OrderDAO oDAO;
-	private UserDAO uDAO;
 	
 	@Autowired
-	public OrderController(OrderDAO oDAO,UserDAO uDAO) {
+	public OrderController(OrderDAO oDAO) {
 		super();
 		this.oDAO = oDAO;
-		this.uDAO = uDAO;
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -44,7 +42,8 @@ public class OrderController {
 	//Get all potions
 	@GetMapping(value="/all")
 	public ResponseEntity<List<Order>> getAllOrder(){
-		return ResponseEntity.ok(oDAO.findAll());
+		List<Order> orderList = oDAO.findAll();
+		return ResponseEntity.ok(orderList);
 	}
 	
 	//Get Potion by id
