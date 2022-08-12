@@ -8,6 +8,8 @@ import com.revature.models.Order;
 
 @Repository
 public interface OrderDAO extends JpaRepository<Order, Integer>{
+	
+	
 
 }
 
