@@ -1,7 +1,5 @@
 package com.revature.controllers;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,11 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.daos.OrderDAO;
-import com.revature.daos.PotionDAO;
-import com.revature.daos.UserDAO;
-import com.revature.models.AlchemistUser;
 import com.revature.models.Order;
-import com.revature.models.Potion;
 
 @CrossOrigin
 @RestController

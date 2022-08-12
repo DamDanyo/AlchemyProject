@@ -2,7 +2,6 @@ package com.revature;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -14,26 +13,28 @@ public class AlchemyApplication{
 		
 		SpringApplication.run(AlchemyApplication.class, args);
 		
-		//HTTP calls===============----------================
+//		HTTP calls===============----------================
+
+//		==================================Potion
+//		get all potions: GET localhost:5555/data/potion/all
+//		get potion by id: GET localhost:5555/data/potion/byId/{id}
+//		insert potion: POST localhost:5555/data/potion   
+//		delete potion by id: DEL localhost:5555/data/potion/delete/{id}  
+//		delete potion(potion in request body): DEL localhost:5555/data/potion
+//			Note: Remember to include json data in the body of the Post request
+//		update potion: POST localhost:5555/data/potion/update
+
+//		Backend api requests (not likely to be used for frontend components)
+//		update database with api potions: GET localhost:555/data/potion/api/update
+//		get Potion from api by id: GET localhost:5555/data/potion/api/{id}
+//		get all potions from api: GET localhost:5555/data/potion/api/all
 		
-		//==================================Potions
-		//	get all potions: GET localhost:5555/data/potion/all
-		//	get potion by id: GET localhost:5555/data/potion/byId/{id}
-		//	insert potion: POST localhost:5555/data/potion   
-		//	delete potion by id: DEL localhost:5555/data/potion/delete/{id}  
-		//	delete potion(potion in request body): DEL localhost:5555/data/potion
-		//Note: Remember to include json data in the body of the Post request
-		//	update potion: POST localhost:5555/data/potion/update
-	
-		//Backend api requests
-		//	update database with api potions: GET localhost:555/data/potion/api/update
-		//	get Potion from api by id: GET localhost:5555/data/potion/api/{id}
-		//	get all potions from api: GET localhost:5555/data/potion/api/all
-		
-		//==================================Orders
-		// get all order: GET localhost:5555/data/order/all
-		// get order by id: GET localhost:5555/data/potion/byID/{id}
-		// insert order: POST localhost:5555/data/potion
+//		==================================Order
+// 		get all order: GET localhost:5555/data/order/all
+// 		get order by id: GET localhost:5555/data/order/byID/{id}
+// 		insert order: POST localhost:5555/data/order/insert
+
+//==================================User
 	}
 
 	@Bean
