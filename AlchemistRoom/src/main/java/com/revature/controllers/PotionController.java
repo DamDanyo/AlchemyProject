@@ -47,6 +47,7 @@ public class PotionController {
 	public ResponseEntity<List<Potion>> getAllPotion(){
 		return ResponseEntity.ok(pDAO.findAll());
 	}
+	
 	//Get potion by id
 	@GetMapping(value="/byId/{id}")
 	public ResponseEntity<Potion> findById(@PathVariable int id){
@@ -59,6 +60,7 @@ public class PotionController {
 		
 		return ResponseEntity.noContent().build();
 	}
+	
 	//Insert potion
 	@PostMapping
 	public ResponseEntity<Potion> addPotion(@RequestBody Potion p) {

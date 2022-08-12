@@ -25,13 +25,15 @@ public class AlchemyApplication{
 		//Note: Remember to include json data in the body of the Post request
 		//	update potion: POST localhost:5555/data/potion/update
 	
-		
-		
 		//Backend api requests
 		//	update database with api potions: GET localhost:555/data/potion/api/update
 		//	get Potion from api by id: GET localhost:5555/data/potion/api/{id}
 		//	get all potions from api: GET localhost:5555/data/potion/api/all
 		
+		//==================================Orders
+		// get all order: GET localhost:5555/data/order/all
+		// get order by id: GET localhost:5555/data/potion/byID/{id}
+		// insert order: POST localhost:5555/data/potion
 	}
 
 	@Bean

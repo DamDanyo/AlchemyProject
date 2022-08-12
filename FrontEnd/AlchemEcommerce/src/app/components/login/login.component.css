@@ -1,0 +1,42 @@
+#myVid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+  margin: 0;
+}
+#login-div {
+  display: grid;
+  position: relative;
+  justify-content: center;
+  border: dotted wheat 2px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 30vw;
+  left: 48%;
+  margin-top: -5%;
+  transform: translate(-50%, -50%);
+}
+#login-btn {
+  margin: 10px 15px;
+}
+div.container {
+  margin: 0;
+  padding: 0;
+  min-height: auto;
+}
+#myBanner {
+  min-width: 100%;
+  z-index: -1;
+}
+div {
+  border-radius: 10px;
+  padding: 5px;
+  opacity: 0.95;
+  font-family: "dum2";
+}
+.hide {
+  display: none;
+}
