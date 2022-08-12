@@ -9,11 +9,11 @@ import { Potions } from '../models/potions';
 export class PotionsService {
 
   //potions object to get displayed
-  potion:Potions = {
-    name:"",
-    description:""
-    //sprite:""
-  }
+  // potion:Potions = {
+  //   name:"",
+  //   description:""
+  //   //sprite:""
+  // }
  private getPotionsUrl = "http://localhost:5555/data/potion/all"
   
  getPotionTest(){
