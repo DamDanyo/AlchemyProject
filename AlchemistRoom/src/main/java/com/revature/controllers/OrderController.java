@@ -1,5 +1,7 @@
 package com.revature.controllers;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,7 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.daos.OrderDAO;
+import com.revature.daos.PotionDAO;
+import com.revature.daos.UserDAO;
+import com.revature.models.AlchemistUser;
 import com.revature.models.Order;
+import com.revature.models.Potion;
 
 @CrossOrigin
 @RestController
@@ -22,10 +28,13 @@ import com.revature.models.Order;
 public class OrderController {
 	
 	private OrderDAO oDAO;
+	private UserDAO uDAO;
+	
 	@Autowired
-	public OrderController(OrderDAO oDAO) {
+	public OrderController(OrderDAO oDAO,UserDAO uDAO) {
 		super();
 		this.oDAO = oDAO;
+		this.uDAO = uDAO;
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -55,13 +64,23 @@ public class OrderController {
 	//Insert Order 
 	@PostMapping
 	public ResponseEntity<Order> addOrder(@RequestBody Order o){
-		
-		Order newOrder = oDAO.save(o);
-		if(newOrder == null) {
-			return ResponseEntity.badRequest().build();
 			
-		}
-		return ResponseEntity.accepted().body(newOrder);
+			//If total isn't provided
+			if(o.getOrdertotal()==0) {
+				int total =0;
+				for(int i=0;i<o.getItems().size();i++) {
+					total += (o.getItems().get(i) * o.getItemsquantity().get(i));
+				}
+				o.setOrdertotal(total);
+			}
+
+			Order newOrder = oDAO.save(o);			
+				
+			if(newOrder == null) {
+				return ResponseEntity.badRequest().build();
+				
+			}		
+			return ResponseEntity.accepted().body(newOrder);
 	}
 	
 	//Backend Methods-----------------------------------	
