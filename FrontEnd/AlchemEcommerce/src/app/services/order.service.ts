@@ -8,6 +8,7 @@ import { UserCreds } from '../models/user';
 })
 export class OrderService {
 
+<<<<<<< HEAD
   //order:Order = {
     // userid: 11,
     // username: "daniel",
@@ -19,10 +20,24 @@ export class OrderService {
    // itemsquantity: "",
     
  // }
+=======
+  // order:Order = {
+  //   // userid: 11,
+  //   // username: "daniel",
+  //   // password: "password",
+  //   // isadmin: true,
+  //   // orderaddress: "high st",
+  //   ordertotal: "",   
+  //   items: "",
+  //   itemsquantity: "",
+    
+  // }
+>>>>>>> 361566d8df8b4f282dd89f795dfd633769a2b983
 
 
 
   
+<<<<<<< HEAD
   //constructor(private http: HttpClient) {}
   //private loginUrl = 'http://localhost:5555/data/user/login';
   //private addUrl = 'http://localhost:5555/data/user';
@@ -33,6 +48,18 @@ export class OrderService {
       //userCreds
    // ) as Observable<UserCreds>;
  //}
+=======
+  // constructor(private http: HttpClient) {}
+  // private loginUrl = 'http://localhost:5555/data/user/login';
+  // private addUrl = 'http://localhost:5555/data/user';
+
+  // login(userCreds: UserCreds): Observable<UserCreds> {
+  //   return this.http.post<UserCreds>(
+  //     this.loginUrl,
+  //     userCreds
+  //   ) as Observable<UserCreds>;
+  // }
+>>>>>>> 361566d8df8b4f282dd89f795dfd633769a2b983
 
 
 

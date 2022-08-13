@@ -2,12 +2,12 @@ export class Order {
 
     constructor(
           
-            
-            // userid: 11,
-            // username: "daniel",
-            // password: "password",
-            // isadmin: true,
-            // orderaddress: "high st",
+        useridFK:{},
+        public userid: number,
+        public username: string,
+        public password: string,
+        public isadmin: true,    
+        public orderaddress: string,
         public ordertotal: number,   
         public items: number,
         public itemsquantity: number,
