@@ -12,6 +12,7 @@ import { MainBrowserComponent } from './components/main-browser/main-browser.com
 import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
 import { Navbar2Component } from './components/navbar2/navbar2.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CookieModule } from 'ngx-cookie';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { CartComponent } from './components/cart/cart.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CookieModule.withOptions(),
   ],
   providers: [],
   bootstrap: [AppComponent],
