@@ -12,10 +12,9 @@ export class UserService {
   private addUrl = 'http://localhost:5555/data/user';
 
   login(userCreds: UserCreds): Observable<UserCreds> {
-    return this.http.post<UserCreds>(
-      this.loginUrl,
-      userCreds
-    ) as Observable<UserCreds>;
+    return this.http.post<UserCreds>(this.loginUrl, userCreds, {
+      withCredentials: true,
+    }) as Observable<UserCreds>;
   }
 
   addUser(userCreds: UserCreds): Observable<UserCreds> {

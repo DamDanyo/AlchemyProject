@@ -14,7 +14,7 @@
         <div class="grid-container">
 
             <!--Property binding, taking from TS and changing an HTML attribute -->
-            <div *ngFor="let potion of potionsArray" class="potion-card">
+            <div *ngFor="let potion of potionsArray; let x = index" class="potion-card">
                 <!-- <div class = "potion-card"> -->
                 <!--String Interpolation, takeing from TS and rending it on the HTML
         <h2>Potion #{{potion.id}}</h2>
@@ -33,8 +33,8 @@
                     </tbody>
                 </table>
                     <div>
-                        <input type="number" class="col-lg-3" name="numInput" id="numInput" >
-                        <button  class="button" (click)="addPotionsToInventory()">Purchase {{potion.name}}</button>
+                        <input type="number" id="potionQuantity-{{x}}" class="col-lg-3" name="numInput" id="numInput" >
+                        <button  class="button" (click)="addPotionsToInventory(x)">Purchase {{potion.name}}</button>
                     </div>
             </div>
 
