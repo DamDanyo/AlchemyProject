@@ -47,7 +47,7 @@ public class AlchemyApplication{
 	            *  Allow on all API endpoint paths
 	            *  Allow all methods - GET, POST, PUT, DELETE, OPTIONS, and etc.
 	            *  Allow cross-origin requests from http://localhost (Front-end). Add port number if front-end is running on a different port
-	            *  Allow receiving of credentials (if using {withCredentials:true} option with http requests in angular)
+	            *  Allow receiving/sending of credentials (if using {withCredentials:true} option with http requests in angular)
 	            */
 	            registry.addMapping("/**").allowedMethods("*").allowedOrigins("http://localhost:4200").allowCredentials(true);
 	        }

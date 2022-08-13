@@ -2,6 +2,10 @@ package com.revature.controllers;
 
 import java.util.Optional;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
@@ -40,7 +44,7 @@ public class UserController {
 	//This method will be used to login a user.
 	//path is: POST - http://localhost:5555/data/user/login
 	@PostMapping(value="/login")
-	public ResponseEntity<AlchemistUser> login(@RequestBody LoginDTO lDTO) {
+	public ResponseEntity<AlchemistUser> login(@RequestBody LoginDTO lDTO, HttpServletResponse response) {
 		
 		
 		
@@ -56,6 +60,14 @@ public class UserController {
 			
 		}
 		AlchemistUser u = user.get();
+		Cookie cookie = new Cookie("userid", Integer.toString(u.getUserid()));
+		cookie.setPath("/");
+		cookie.setHttpOnly(false);
+		response.addCookie(cookie);
+//		Cookie cookie = new Cookie("whatevererere", Integer.toString(u.getUserid()));
+//		cookie.setPath("/");
+//		cookie.setHttpOnly(false);
+//		response.addCookie(cookie);
 		return ResponseEntity.accepted().body(u);
 		
 		
