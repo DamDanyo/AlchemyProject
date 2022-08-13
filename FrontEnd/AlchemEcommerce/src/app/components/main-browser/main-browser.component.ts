@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from 'src/app/models/order';
 import { Potions } from 'src/app/models/potions';
+import { OrderService } from 'src/app/services/order.service';
 import { PotionsService } from 'src/app/services/potions.service';
 
 
@@ -11,39 +13,75 @@ import { PotionsService } from 'src/app/services/potions.service';
 })
 export class MainBrowserComponent implements OnInit {
 
-  //  //hidden toggle
-  //  hiddenToggle:boolean = true
-
+ 
+  public input:number = 0;
    
   public potionsArray:Potions[] = [];
+  
+  // testOrder = new Order(
+  //   useridFK:"",
+  //   userid: 11,
+  //   username: "daniel",
+  //   password: "password",
+  //   isadmin: true,    
+  //   orderaddress: "high st",
+  //   ordertotal: 55,   
+  //   items: [20, 2],
+  //   itemsquantity: [10, 50],
+  // );
+
+  Order: any;
+
+
+
   
   //ptools = [Potions]
 
   constructor(private ps:PotionsService) { }
 
-  getPotions(){
+ getPotions(){
 
       this.ps.getPotionTest().subscribe(
       {next:(data)=>{
         this.potionsArray = data
         data.push()
-       // console.log(this.potionsArray)
+        console.log(this.potionsArray)
         var realNameArray = []
         for (let nameArray of this.potionsArray){
-        //  console.log(nameArray)
+          console.log(nameArray)
           realNameArray.push({
             name:nameArray.name,
             description:nameArray.description
         })
-      //  console.log(realNameArray)
+        console.log(realNameArray)
         }
       } 
       })
     }
+   
     
   addPotionsToInventory(){
+ 
+    let potionQuantity = document.getElementById("numInput") as HTMLInputElement|null;
+    if(potionQuantity != null){
+      const value = potionQuantity.value
+      console.log(value)
+    }
+    return 
 
-    
+
+    // this.order = this.testOrder.value;
+    // this.ps.sendOrder(this.Order).subscribe((response: any) => {
+    //   console.log(response);
+    // });
+
+    // if (this.Order) {
+    // } else {
+    // }
+       
+        
+      // }
+     
 
 
   }
@@ -120,7 +158,7 @@ export class MainBrowserComponent implements OnInit {
         //  console.log(this.potionsArray)
           var realNameArray = []
           for (let nameArray of this.potionsArray){
-           // console.log(nameArray)
+            console.log(nameArray)
             realNameArray.push({
               name:nameArray.name
           })
