@@ -6,6 +6,8 @@
 
         </div>
 
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <div>
             <app-navbar2></app-navbar2>
         </div>
@@ -25,12 +27,15 @@
                         <th class="col-sm-1" style="text-decoration:underline; color:aliceblue">Description:</th>
                     </thead>
                     <tbody>
-                        <td style="color:rgb(14, 33, 87)">{{potion.name}}</td>
+                        <td style="color:rgb(14, 33, 87)" name="potionID" id="">{{potion.name}}</td>
                         <td style="color:aliceblue">{{potion.description}}</td>
 
                     </tbody>
                 </table>
-                <button  class="button" onclick="addPotionsToInventory()">Purchase {{potion.name}}</button>
+                    <div>
+                        <input type="number" class="col-lg-3" name="numInput" id="numInput" >
+                        <button  class="button" (click)="addPotionsToInventory()">Purchase {{potion.name}}</button>
+                    </div>
             </div>
 
             <!-- <div class="potion-card" [hidden]="hiddenToggle">

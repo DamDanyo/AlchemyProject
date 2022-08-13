@@ -1,6 +1,7 @@
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Order } from '../models/order';
 import { Potions } from '../models/potions';
 
 @Injectable({
@@ -14,6 +15,9 @@ export class PotionsService {
   //   description:""
   //   //sprite:""
   // }
+
+
+
  private getPotionsUrl = "http://localhost:5555/data/potion/all"
   
  getPotionTest(){
@@ -35,9 +39,10 @@ export class PotionsService {
     //console.log("response")
    // return this.http.get("localhost:5555/data/potion/all").subscribe((returnedStuff) => {console.log(returnedStuff);});
 
-
-
   }
   
+  sendOrder(order:Order):Observable<Order>{
+    return this.http.post("http://localhost:5555/data/order/insert", order) as Observable<Order>
+  }
 
 }
