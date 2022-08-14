@@ -5,7 +5,6 @@
   background-image: url(../../../assets/Imgs/brown-papyrus-paper.jpg);
   gap: 100px;
   background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: 100%;
   padding: 25px;
   border-radius: 10px;
@@ -32,12 +31,6 @@ p {
   color: black;
 }
 
-#wizard-img {
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-attachment: scroll;
-  width: 100%;
-}
 .pc-content-wrapper {
   position: relative;
   -webkit-box-shadow: rgb(0, 0, 0) 5px 5px 5px 0px,
