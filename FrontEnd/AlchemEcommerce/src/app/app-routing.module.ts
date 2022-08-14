@@ -7,7 +7,7 @@ import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
   },
   {
@@ -21,12 +21,19 @@ const routes: Routes = [
   },
 
   {
-    path:"main",
+    path: 'main',
     component: MainBrowserComponent,
   },
 
+<<<<<<< Updated upstream
  
  
+=======
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+  },
+>>>>>>> Stashed changes
 ];
 
 @NgModule({
