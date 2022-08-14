@@ -16,7 +16,7 @@
   background-color: rgba(255, 255, 255, 0.5);
   width: 30vw;
   left: 48%;
-  margin-top: -5%;
+  min-width: 235px;
   transform: translate(-50%, -50%);
 }
 #login-btn {
@@ -28,8 +28,9 @@ div.container {
   min-height: auto;
 }
 #myBanner {
-  min-width: 100%;
+  width: 100%;
   z-index: -1;
+  position: relative;
 }
 div {
   border-radius: 10px;

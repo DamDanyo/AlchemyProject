@@ -17,11 +17,11 @@ export class MainBrowserComponent implements OnInit {
   public potionsArray: Potions[] = [];
 
   // testOrder = new Order(
-  //   useridFK:"",
+  //   useridFK:{,
   //   userid: 11,
   //   username: "daniel",
   //   password: "password",
-  //   isadmin: true,
+  //   isadmin: true,}
   //   orderaddress: "high st",
   //   ordertotal: 55,
   //   items: [20, 2],
@@ -70,75 +70,21 @@ export class MainBrowserComponent implements OnInit {
         useridFK: {
           userid: userid,
         },
-        potion: potion
-        
-       
+        potion: potion,
+        potionQuantity: JSON.parse(value)  
       };
       this.Order.push(cartItem)
     }
       console.log(this.Order)
       localStorage.setItem("cart", JSON.stringify(this.Order))
-      
-    
-    
-      
-    // this.order = this.testOrder.value;
-    // this.ps.sendOrder(this.Order).subscribe((response: any) => {
-    //   console.log(response);
-    // });
-
-    // if (this.Order) {
-    // } else {
-    // }
-
-    // }
   }
 
   
 
-  // THIS WORKS
-  //   this.ps.getPotionTest().subscribe(
-  //     {next:(data)=>{
-  //       console.log(data)
-  //     }, error:(err)=>{
-  //       console.log(err)
-  //     }
-  //   } )
-  // }
 
-  //THIS SECTION WAS ORIGINAL
-  // this.ps.getPotionFromApi("").subscribe(
-  //   (data:any) => {
-  //     this.potionsArray = data.body;
-  //     console.log(this.potionsArray);
 
-  // for (let potionVar of data){
 
-  // potential refactor
-  //        for (let Potions of data) {
-  //  potionVar.push({
-  //  name: Potions.name
-  //  });
-  // console.log(potionVar);
 
-  //dans
-  //var data1 = [];
-  // for (let reimb of data) {
-  //   data1.push({
-  //     ID: reimb.reimb_id,
-  //     Amount: reimb.reimb_amount,
-  //     Submitted: reimb.reimb_submitted,
-  //     Description: reimb.reimb_description,
-  //     Author: reimb.reimb_author,
-  //     Resolver: reimb.reimb_resolver,
-  //     Status: reimb.reimbursement_status.reimb_status,
-  //     Type: reimb.reimbursement_type.reimb_type,
-  //   });
-
-  //  }
-  //  console.log(data);
-  // }
-  //  )
 
   ngOnInit(): void {
 
