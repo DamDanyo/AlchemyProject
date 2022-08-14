@@ -1,0 +1,31 @@
+#my-vid2 {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+  margin: 0;
+}
+body {
+  margin: 0;
+}
+#header-header {
+  position: relative;
+  z-index: -1;
+}
+#summary-container {
+  position: relative;
+  background-color: rgba(200, 200, 200, 0.75);
+  z-index: 0;
+  width: 50%;
+  height: 50vh;
+  transform: translateX(50%) translateY(50%);
+  border-radius: 10px;
+  box-shadow: rgb(0, 0, 0, 0.5) 5px 5px 5px 0px,
+    rgb(0, 0, 0, 0.5) 4px 4px 15px 0px inset, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+#summ-container-wrapper {
+  position: relative;
+  width: 50%;
+}
