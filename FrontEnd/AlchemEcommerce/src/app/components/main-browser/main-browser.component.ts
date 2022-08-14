@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie';
 import { Order } from 'src/app/models/order';
 import { Potions } from 'src/app/models/potions';
@@ -27,11 +28,13 @@ export class MainBrowserComponent implements OnInit {
   //   itemsquantity: [10, 50],
   // );
 
-  Order: any;
+  Order: Array<any> = [];
+  @Output() passFunction = new EventEmitter<any>();
 
   constructor(
     private ps: PotionsService,
-    private cookieService: CookieService
+    private cookieService: CookieService,
+    private router: Router,
   ) {}
 
   getPotions() {
@@ -53,23 +56,32 @@ export class MainBrowserComponent implements OnInit {
     });
   }
 
-  addPotionsToInventory(itemNum:number) {
+  addPotionsToInventory(itemNum: number, potion: any) {
     let userid = this.cookieService.get('userid');
     console.log(userid);
-    let cartItem = {   
-      useridFK: {
-          userid: 11,
-          },  
-      items: 0,
-      itemsquantity: 0
-  }
 
-    let potionQuantity = document.getElementById("potionQuantity-" + itemNum) as HTMLInputElement|null;
-    if(potionQuantity != null){
-      const value = potionQuantity.value
-      console.log(value)
+    let potionQuantity = document.getElementById(
+      'potionQuantity-' + itemNum
+    ) as HTMLInputElement | null;
+    if (potionQuantity != null) {
+      const value = potionQuantity.value;
+      console.log(value);
+      let cartItem = {
+        useridFK: {
+          userid: userid,
+        },
+        potion: potion
+        
+       
+      };
+      this.Order.push(cartItem)
     }
-
+      console.log(this.Order)
+      localStorage.setItem("cart", JSON.stringify(this.Order))
+      
+    
+    
+      
     // this.order = this.testOrder.value;
     // this.ps.sendOrder(this.Order).subscribe((response: any) => {
     //   console.log(response);
@@ -81,6 +93,8 @@ export class MainBrowserComponent implements OnInit {
 
     // }
   }
+
+  
 
   // THIS WORKS
   //   this.ps.getPotionTest().subscribe(
@@ -127,6 +141,11 @@ export class MainBrowserComponent implements OnInit {
   //  )
 
   ngOnInit(): void {
+
+    
+
+
+
     this.ps.getPotionFromApi('', '').subscribe((data: any) => {
       this.potionsArray = data.body;
       //   console.log(this.potionsArray);
@@ -139,7 +158,7 @@ export class MainBrowserComponent implements OnInit {
         //  console.log(this.potionsArray)
         var realNameArray = [];
         for (let nameArray of this.potionsArray) {
-            console.log(nameArray)
+          console.log(nameArray);
           realNameArray.push({
             name: nameArray.name,
           });

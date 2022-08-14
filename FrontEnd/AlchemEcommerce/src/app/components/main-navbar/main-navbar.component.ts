@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-navbar',
@@ -17,12 +18,12 @@ export class MainNavbarComponent implements OnInit {
     this.hiddenToggle2 = !this.hiddenToggle2
   }
 
+  
 
 
 
 
-
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
