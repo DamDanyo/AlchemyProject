@@ -25,10 +25,7 @@ const routes: Routes = [
     component: MainBrowserComponent,
   },
 
-  {
-    path:"checkout",
-    component: CheckoutComponent,
-  },
+ 
  
 ];
 
