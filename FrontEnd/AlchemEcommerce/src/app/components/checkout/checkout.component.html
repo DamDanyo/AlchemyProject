@@ -53,8 +53,10 @@
           <span class="price" style="color: black"><i class="fa fa-shopping-cart"></i></span>
         </h4>
         <p *ngFor="let item of (cart ? cart : []);let j = index">
-          <a href="#">{{item.potion.name}}</a><span class="price">{{item.potion.potionvalue}}</span>
-          <a (click)="deleteOrderItem(j)">delete</a>
+          <button (click)="deleteOrderItem(j)">delete</button><a href="/main">{{item.potion.name}}</a>
+          <span>{{item.potionQuantity}}</span><span class="price">{{(item.potion.potionvalue) *
+            (item.potionQuantity)}}</span>
+
         </p>
         <hr />
         <p>
