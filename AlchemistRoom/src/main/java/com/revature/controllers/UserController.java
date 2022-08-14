@@ -1,9 +1,9 @@
 package com.revature.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -105,7 +105,7 @@ public class UserController {
 	
 	//this method will be used to delete a user by their id in the path
 	//path is DELETE - http://localhost:5555/data/user/deleteById/{id}
-	@DeleteMapping(value=("deleteById/{id}"))
+	@DeleteMapping(value=("/deleteById/{id}"))
 	public ResponseEntity<?> deleteById(@PathVariable int id){
 		
 		try{uDAO.deleteById(id);
@@ -119,7 +119,7 @@ public class UserController {
 	
 	//this method will be used to update user username and password
 	//path is POST - http://localhost:5555/data/user/{id}/updateUser
-	@PostMapping(value=("{id}/updateUser"))
+	@PostMapping(value=("/{id}/updateUser"))
 	public ResponseEntity<AlchemistUser> updateUser(@PathVariable int id, @RequestBody AlchemistUser userDetails){
 		Optional<AlchemistUser> userOptional = uDAO.findById(id);
 		if(userOptional.isPresent()) {
@@ -129,6 +129,11 @@ public class UserController {
 			return ResponseEntity.ok(uDAO.save(user));
 		}
 		return ResponseEntity.badRequest().build();
+	}
+	
+	@GetMapping(value=("/allUsers"))
+	public ResponseEntity<List<AlchemistUser>> getAllUsers(){
+		return ResponseEntity.ok(uDAO.findAll());
 	}
 	
 	
