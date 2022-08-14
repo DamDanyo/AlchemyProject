@@ -10,13 +10,21 @@ import { RegisterComponent } from './components/register/register.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { MainBrowserComponent } from './components/main-browser/main-browser.component';
 import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
-import { Navbar2Component } from './components/navbar2/navbar2.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CookieModule } from 'ngx-cookie';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent, CheckoutComponent, MainBrowserComponent, MainNavbarComponent, Navbar2Component, CartComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    CheckoutComponent,
+    MainBrowserComponent,
+    MainNavbarComponent,
+    CartComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,6 +32,8 @@ import { CookieModule } from 'ngx-cookie';
     ReactiveFormsModule,
     HttpClientModule,
     CookieModule.withOptions(),
+    BrowserAnimationsModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

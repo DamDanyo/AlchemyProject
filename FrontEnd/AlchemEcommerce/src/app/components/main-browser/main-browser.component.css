@@ -2,24 +2,27 @@
   display: inline-grid;
   position: relative;
   grid-template-columns: repeat(4, 1fr);
+  background-image: url(../../../assets/Imgs/brown-papyrus-paper.jpg);
   gap: 100px;
-  background-image: url("../../../assets/Imgs/alchemy2.jpg");
   background-attachment: fixed;
-  background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
-  padding: 5%;
+  padding: 25px;
   border-radius: 10px;
-  margin: 0px 5%;
+  max-width: 100vw;
+  box-shadow: rgb(0, 0, 0) 5px 5px 5px 0px, rgb(0, 0, 0) 4px 4px 15px 0px inset,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .potion-card {
   border-style: solid;
   border-radius: 10px;
   border-width: 0.1em;
-  color: aliceblue;
-  opacity: 0.9;
-  background-color: gray;
+  background-image: url(../../../assets/Imgs/antique-brown-textured-paper.jpg);
+  background-size: 100%;
+  box-shadow: rgb(0, 0, 0) 5px 5px 5px 0px, rgb(0, 0, 0) 4px 4px 15px 0px inset,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+
   padding: 20px;
 }
 h2 {
@@ -32,13 +35,25 @@ p {
 #wizard-img {
   background-repeat: no-repeat;
   background-size: 100%;
-  min-width: 100%;
+  background-attachment: scroll;
+  width: 100%;
+}
+.pc-content-wrapper {
+  position: relative;
+  -webkit-box-shadow: rgb(0, 0, 0) 5px 5px 5px 0px,
+    rgb(0, 0, 0) 4px 4px 15px 0px inset, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: rgb(0, 0, 0) 5px 5px 5px 0px, rgb(0, 0, 0) 4px 4px 15px 0px inset,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  opacity: 0.8;
+  border-radius: 10px;
+  padding: 4%;
 }
 body {
-  background-color: dimgray;
+  background-color: #18181a;
 }
-
-/* .img1{
-    background-image: url("../../../assets/Imgs/alchemy2.jpg");
-    padding: 20em;
-} */
+.nav-wrapper {
+  padding-bottom: 700px;
+  position: relative;
+  background-image: url(../../../assets/Imgs/alchemy.jpg);
+  background-repeat: no-repeat;
+}

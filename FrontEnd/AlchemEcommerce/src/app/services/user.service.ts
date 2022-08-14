@@ -9,7 +9,7 @@ import { User, UserCreds } from '../models/user';
 export class UserService {
   constructor(private http: HttpClient) {}
   private loginUrl = 'http://localhost:5555/data/user/login';
-  private addUrl = 'http://localhost:5555/data/user';
+  private addUrl = 'http://localhost:5555/data/user/add';
 
   login(userCreds: UserCreds): Observable<UserCreds> {
     return this.http.post<UserCreds>(this.loginUrl, userCreds, {

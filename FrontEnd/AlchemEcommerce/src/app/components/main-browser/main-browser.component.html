@@ -1,12 +1,12 @@
-<div>
+<body>
 
-  <body>
+
+  <div class="nav-wrapper">
     <app-main-navbar></app-main-navbar>
-    <img src="../../../assets/Imgs/alchemy.jpg" alt="" id="wizard-img">
-    <app-navbar2></app-navbar2>
-
-    <div class="grid-container">
-      <div *ngFor="let potion of potionsArray; let x = index" class="potion-card">
+  </div>
+  <div class="grid-container">
+    <div *ngFor="let potion of potionsArray; let x = index" class="potion-card">
+      <div class="pc-content-wrapper">
         <table>
           <thead>
             <th class="col-sm-1" style="text-decoration: underline; color: rgb(14, 33, 87)">
@@ -23,15 +23,15 @@
             <td style="color: aliceblue">{{ potion.description }}</td>
           </tbody>
         </table>
+
         <div>
           <input type="number" id="potionQuantity-{{ x }}" class="col-lg-3" name="numInput" id="numInput" />
           <button class="button" (click)="addPotionsToInventory(x, potion)">
             Purchase {{ potion.name }}
           </button>
+
         </div>
       </div>
     </div>
-
-    <router-outlet></router-outlet>
-  </body>
-</div>
+  </div>
+</body>

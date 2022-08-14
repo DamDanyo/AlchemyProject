@@ -20,10 +20,6 @@ export class RegisterComponent implements OnInit {
     this.us.addUser(this.userCreds).subscribe((response: any) => {
       console.log(response);
     });
-
-    if (this.userCreds) {
-    } else {
-    }
   }
   ngOnInit(): void {}
 }
