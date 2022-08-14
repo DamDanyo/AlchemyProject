@@ -24,16 +24,6 @@ const routes: Routes = [
     path: 'main',
     component: MainBrowserComponent,
   },
-
-<<<<<<< Updated upstream
- 
- 
-=======
-  {
-    path: 'checkout',
-    component: CheckoutComponent,
-  },
->>>>>>> Stashed changes
 ];
 
 @NgModule({
