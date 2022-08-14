@@ -70,7 +70,9 @@ export class MainBrowserComponent implements OnInit {
         useridFK: {
           userid: userid,
         },
-        potion: potion
+        potion: potion,
+        potionQuantity: JSON.parse(value)
+        
         
        
       };

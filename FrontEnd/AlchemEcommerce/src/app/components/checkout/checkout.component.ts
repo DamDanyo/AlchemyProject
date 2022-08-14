@@ -16,7 +16,10 @@ export class CheckoutComponent implements OnInit {
     }
     for (let i = 0; i < this.cart.length; i++) {
       let potion = this.cart[i].potion;
-      this.Total += potion.potionvalue;
+      let q = this.cart[i].potionQuantity;
+      let q2 = this.cart[i].potion.potionvalue
+      console.log(q)
+      this.Total = q2 * q;
     }
   }
 
@@ -25,11 +28,18 @@ export class CheckoutComponent implements OnInit {
     if (localCart != null) {
       let cartArray = JSON.parse(localCart);
       console.log(index)
-      this.Total -= cartArray[index].potion.potionvalue
+      let q = cartArray.potionQuantity
+      this.Total = cartArray[index].potion.potionvalue * q
       cartArray.splice(index, 1)
       localStorage.setItem("cart", JSON.stringify(cartArray))
       this.cart = cartArray
-    }
+       if (this.cart.length == 0){
+        this.Total = 0
+       }
+    
+    } 
+
+    
     console.log(this.cart);
   }
  
