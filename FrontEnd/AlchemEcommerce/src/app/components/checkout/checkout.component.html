@@ -113,11 +113,9 @@
     </style>
   </head>
   <body>
-    <h2>Responsive Checkout Form</h2>
+    <h2>Checkout</h2>
     <p>
-      Resize the browser window to see the effect. When the screen is less than
-      800px wide, make the two columns stack on top of each other instead of
-      next to each other.
+      Enter your billing information below:
     </p>
     <div class="row">
       <div class="col-75">
@@ -241,11 +239,12 @@
           <h4>
             Cart
             <span class="price" style="color: black"
-              ><i class="fa fa-shopping-cart"></i> <b>4</b></span
+              ><i class="fa fa-shopping-cart"></i></span
             >
           </h4>
-          <p *ngFor="let item of (cart ? cart : [])">
-            <a href="#">{{item.potion.name}}</a> <span class="price">{{item.potion.potionvalue}}</span>
+          <p *ngFor="let item of (cart ? cart : []);let j = index">
+            <a href="#">{{item.potion.name}}</a><span class="price">{{item.potion.potionvalue}}</span>
+            <a (click)="deleteOrderItem(j)">delete</a>
           </p>
           <hr />
           <p>
