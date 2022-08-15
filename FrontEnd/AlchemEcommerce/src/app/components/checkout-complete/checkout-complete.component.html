@@ -1,20 +1,21 @@
+<video onloadedmetadata="this.muted=true" autoplay loop id="my-vid2">
+    <source src="../../../assets/Videos/pexels-cottonbro-9694227.mp4" type="video/mp4">
+</video>
+<div class="hea">
+    <h1>Thank You for Choosing</h1>
+    <img id="logo-img" src="../../../assets/Imgs/nav-img.png" alt="">
+</div>
+
 <body>
-    <video onloadedmetadata="this.muted=true" autoplay loop id="my-vid2">
-        <source src="../../../assets/Videos/pexels-cottonbro-9694227.mp4" type="video/mp4">
-    </video>
+
     <div class="container" id="summary-container">
         <div class="container" id="summ-content-wrapper">
+
             <h2 class="header" id="header-header">Your Order Has Been Placed</h2>
-            <!-- {{Order.summary}} -->
-
-
-            <!-- <p *ngFor="let item of (cart ? cart : []);let j = index">
-                <a href="/main">{{item.potion.name}}</a>
-                <span>{{item.potionQuantity}}</span><span class="price">{{(item.potion.potionvalue) *
-                    (item.potionQuantity)}}</span>
-
-            </p> -->
-            <a href="/main">Continue Shopping</a><br>
-            <a href="/checkout">Back to Cart</a>
+            <p>your post owl's name : Blinky</p>
+            <p>Delivery Date : 8/24/2022</p>
+            <img id="owl" src="../../../assets/Imgs/owl2.png" alt=""><br>
+            <button class="order-btn" (click)="main()">Continue Shopping</button>
+            <button class="order-btn" (click)="cart()">Back to Cart</button>
         </div>
     </div>

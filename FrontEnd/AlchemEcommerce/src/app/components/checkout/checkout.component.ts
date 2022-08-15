@@ -50,16 +50,32 @@ export class CheckoutComponent implements OnInit {
 
     console.log(this.cart);
   }
-  addOrder(order: newOrder) {
+  addOrder() {
     let cartOrder = localStorage.getItem('cart');
     console.log(cartOrder);
 
-    let id = this.cs.get('userid');
-    console.log(id);
-    let address = document.getElementById('#address') as HTMLInputElement;
-    console.log(address);
+    let userid = this.cs.get('userid');
+    console.log(userid);
+    let orderAddress = document.getElementById('adr-');
     let ordertotal = this.Total;
     console.log(ordertotal);
+    let items = localStorage.getItem('pot');
+    let itemsquantity = localStorage.getItem('potion');
+    if (orderAddress != null) {
+      const add = orderAddress;
+      console.log(add);
+    }
+    let incomingOrder = {
+      useridFK: {
+        userid: userid,
+      },
+      orderAddress: orderAddress,
+      ordertotal: ordertotal,
+      items: [items],
+      itemsquantity: [itemsquantity],
+    };
+    console.log(newOrder);
+    console.log(incomingOrder);
   }
 
   cart: Array<any> = [];

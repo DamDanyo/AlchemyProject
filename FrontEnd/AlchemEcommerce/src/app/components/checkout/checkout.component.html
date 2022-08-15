@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
+<app-main-navbar></app-main-navbar>
 
 <body>
   <h2>Checkout</h2>
@@ -23,7 +24,7 @@
               <label for="email"><i class="fa fa-envelope"></i> Email</label>
               <input type="text" id="email" name="email" placeholder="john@example.com" />
               <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-              <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" />
+              <input type="text" id="adr-" name="address" placeholder="542 W. 15th Street" />
               <label for="city"><i class="fa fa-institution"></i> City</label>
               <input type="text" id="city" name="city" placeholder="New York" />
 
@@ -40,7 +41,7 @@
             </div>
           </div>
 
-          <button type="submit" value="Place Order" (click)="addOrder(newOrder)" class=" btn order-btn"
+          <button type="submit" value="Place Order" (click)="addOrder()" class=" btn order-btn"
             routerLink="/checkout-complete">Place
             Order</button>
           <button type="button" value="Continue Shopping" class="btn order-btn" routerLink="/main">Continue
@@ -56,15 +57,15 @@
           <span class="price" style="color: black"><i class="fa fa-shopping-cart"></i></span>
         </h4>
         <p *ngFor="let item of (cart ? cart : []);let j = index">
-          <button (click)="deleteOrderItem(j)" class="btn-danger">delete</button><a
-            href="/main">{{item.potion.name}}</a>
-          <span>{{item.potionQuantity}}</span><span class="price">{{(item.potion.potionvalue) *
+          <a href="/main">{{item.potion.name}}</a>
+          <button (click)="deleteOrderItem(j)" class="btn order-btn">delete</button>
+          <span>Quantity: {{item.potionQuantity}}</span><span class="price">${{(item.potion.potionvalue) *
             (item.potionQuantity)}}</span>
 
         </p>
         <hr />
         <p>
-          Total <span class="price" style="color: black"><b>{{Total}}</b></span>
+          Total <span class="price" style="color: black"><b>${{Total}}</b></span>
         </p>
       </div>
     </div>

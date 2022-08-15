@@ -14,13 +14,18 @@
   border: dotted wheat 2px;
   color: white;
   background-color: rgba(255, 255, 255, 0.5);
+  font-size: larger;
+  font-family: "Arboreto";
   width: 30vw;
-  left: 48%;
+  left: 46%;
+  top: 30%;
   min-width: 235px;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 #login-btn {
   margin: 10px 15px;
+  font-family: "Arboreto";
 }
 div.container {
   margin: 0;
@@ -34,10 +39,13 @@ div.container {
 }
 div {
   border-radius: 10px;
-  padding: 5px;
+  padding: 15px;
   opacity: 0.95;
   font-family: "dum2";
 }
 .hide {
   display: none;
+}
+label {
+  font-family: "Arboreto";
 }

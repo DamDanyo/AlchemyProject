@@ -2,11 +2,33 @@
   position: relative;
   border: 1px solid black;
   border-radius: 10px;
-  background-image: url(../../../assets/Imgs/brown-papyrus-paper.jpg);
-  background-size: 100%;
-  margin-left: 2px;
-  width: 50%;
+  background-image: url(../../../assets/Imgs/alchemy.jpg);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 700px;
 }
-p {
-  font-size: 35px;
+.navbar-nav {
+  display: inline-grid;
+  position: relative;
+  list-style: none;
+  min-width: 70%;
+  font-family: "Arboreto";
+  font-weight: bolder;
+  background-color: rgba(100, 100, 100, 0.7);
+  justify-items: center;
+  border-radius: 10px;
+  margin-left: 10%;
+  padding-bottom: 5px;
+}
+.li-wrapper li {
+  display: inline;
+  margin-right: 100px;
+  margin-left: 100px;
+}
+#logo-img {
+  padding-top: 15p;
+}
+button {
+  font-family: "Arboreto";
 }

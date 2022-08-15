@@ -8,19 +8,19 @@
 }
 #register-div {
   display: grid;
-  position: fixed;
+  position: relative;
   justify-content: center;
   border: dotted wheat 2px;
   color: white;
   background-color: rgba(255, 255, 255, 0.5);
-  font-size: large;
+  font-size: larger;
+  font-family: "Arboreto";
   width: 30vw;
-  left: 50%;
-  top: 35%;
+  left: 46%;
+  top: 30%;
   min-width: 235px;
   transform: translate(-50%, -50%);
-  opacity: 0.9;
-  z-index: 1;
+  z-index: 2;
 }
 .container {
   opacity: 0.98;
@@ -31,9 +31,10 @@ div {
 }
 #reg-btn {
   margin: 10px 15px;
+  font-family: "Arboreto";
 }
 #myBanner {
   width: 100%;
-  z-index: 3;
+  z-index: 1;
   position: relative;
 }

@@ -1,5 +1,11 @@
+@font-face {
+  font-family: "Arboreto";
+  src: local("Arboreto-Regular"),
+    url(./assets/Fonts/Aboreto-Regular.ttf) format("truetype");
+}
 body {
   margin: 0;
+  font-family: "Aboreto";
 }
 .footer-wrapper {
   position: fixed;

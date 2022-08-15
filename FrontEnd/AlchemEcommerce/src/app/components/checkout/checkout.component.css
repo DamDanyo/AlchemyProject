@@ -5,6 +5,7 @@ body {
   height: 100vh;
   background-image: url(../../../assets/Imgs/brown-papyrus-paper.jpg);
   background-size: 100%;
+  font-family: "Arboreto";
 }
 
 * {
@@ -58,6 +59,7 @@ input[type="text"] {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   font-weight: 600;
+  font-family: "Arboreto";
 }
 
 label {
@@ -72,11 +74,8 @@ label {
 }
 
 .btn {
-  background-color: #04aa6d;
-  color: white;
   padding: 12px;
   margin: 10px 0;
-  border: none;
   width: 100%;
   border-radius: 3px;
   cursor: pointer;
