@@ -54,13 +54,12 @@ export class CheckoutComponent implements OnInit {
     let cartOrder = localStorage.getItem('cart');
     console.log(cartOrder);
 
-    let id = localStorage.getItem('useridFK');
+    let id = this.cs.get('userid');
     console.log(id);
-    let address = document.getElementById('adr') as HTMLInputElement;
+    let address = document.getElementById('#address') as HTMLInputElement;
     console.log(address);
     let ordertotal = this.Total;
     console.log(ordertotal);
-    let items = [];
   }
 
   cart: Array<any> = [];

@@ -13,7 +13,7 @@ export class Order {
 }
 export class newOrder {
   constructor(
-    userid: number,
+    useridFK: {},
     orderaddress: string,
     ordertotal: number,
     items: number[],
