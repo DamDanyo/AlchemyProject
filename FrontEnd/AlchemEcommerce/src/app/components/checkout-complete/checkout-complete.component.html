@@ -8,12 +8,12 @@
             <!-- {{Order.summary}} -->
 
 
-            <p *ngFor="let item of (cart ? cart : []);let j = index">
+            <!-- <p *ngFor="let item of (cart ? cart : []);let j = index">
                 <a href="/main">{{item.potion.name}}</a>
                 <span>{{item.potionQuantity}}</span><span class="price">{{(item.potion.potionvalue) *
                     (item.potionQuantity)}}</span>
 
-            </p>
+            </p> -->
             <a href="/main">Continue Shopping</a><br>
             <a href="/checkout">Back to Cart</a>
         </div>

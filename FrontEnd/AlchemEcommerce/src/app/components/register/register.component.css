@@ -32,3 +32,8 @@ div {
 #reg-btn {
   margin: 10px 15px;
 }
+#myBanner {
+  width: 100%;
+  z-index: 3;
+  position: relative;
+}

@@ -9,7 +9,7 @@
 <body>
   <h2>Checkout</h2>
   <p>
-    Enter your billing information below:
+    Enter your shipping information below:
   </p>
   <div class="row">
     <div class="col-75">
@@ -40,8 +40,11 @@
             </div>
           </div>
 
-          <input type="submit" value="Place Order" class="btn" routerLink="/checkout-complete" />
-          <input type="button" value="Continue Shopping" class="btn" routerLink="/main" />
+          <button type="submit" value="Place Order" (click)="addOrder(newOrder)" class=" btn order-btn"
+            routerLink="/checkout-complete">Place
+            Order</button>
+          <button type="button" value="Continue Shopping" class="btn order-btn" routerLink="/main">Continue
+            Shopping</button>
         </form>
       </div>
     </div>
@@ -53,7 +56,8 @@
           <span class="price" style="color: black"><i class="fa fa-shopping-cart"></i></span>
         </h4>
         <p *ngFor="let item of (cart ? cart : []);let j = index">
-          <button (click)="deleteOrderItem(j)">delete</button><a href="/main">{{item.potion.name}}</a>
+          <button (click)="deleteOrderItem(j)" class="btn-danger">delete</button><a
+            href="/main">{{item.potion.name}}</a>
           <span>{{item.potionQuantity}}</span><span class="price">{{(item.potion.potionvalue) *
             (item.potionQuantity)}}</span>
 

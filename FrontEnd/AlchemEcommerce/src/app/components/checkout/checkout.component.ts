@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CookieService } from 'ngx-cookie';
+import { newOrder, Order } from 'src/app/models/order';
 import { Potions } from 'src/app/models/potions';
+import { User } from 'src/app/models/user';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -46,10 +50,24 @@ export class CheckoutComponent implements OnInit {
 
     console.log(this.cart);
   }
+  addOrder(order: newOrder) {
+    let cartOrder = localStorage.getItem('cart');
+    console.log(cartOrder);
+
+    let id = localStorage.getItem('useridFK');
+    console.log(id);
+    let address = document.getElementById('adr') as HTMLInputElement;
+    console.log(address);
+    let ordertotal = this.Total;
+    console.log(ordertotal);
+    let items = [];
+  }
 
   cart: Array<any> = [];
   Total: number = 0;
-  constructor() {}
+  newOrder: Array<any> = [];
+  @Output() passFunction = new EventEmitter<any>();
+  constructor(private os: OrderService, private cs: CookieService) {}
 
   ngOnInit(): void {
     this.initializeCart();

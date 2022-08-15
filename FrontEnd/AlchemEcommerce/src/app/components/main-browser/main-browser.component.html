@@ -9,7 +9,7 @@
       <div class="pc-content-wrapper">
         <table>
           <thead>
-            <th class="col-sm-1" style="text-decoration: underline; color: rgb(14, 33, 87)">
+            <th class="col-sm-1" style="text-decoration: underline; color: aliceblue">
               Potion Name:
             </th>
             <th class="col-sm-1" style="text-decoration: underline; color: aliceblue">
@@ -17,7 +17,7 @@
             </th>
           </thead>
           <tbody>
-            <td style="color: rgb(14, 33, 87)" name="potionID" id="">
+            <td style="color: aliceblue" name="potionID" id="">
               {{ potion.name }}
             </td>
             <td style="color: aliceblue">{{ potion.description }}</td>
@@ -25,7 +25,7 @@
         </table>
 
         <div>
-          <input type="number" id="potionQuantity-{{ x }}" class="col-lg-3" name="numInput" id="numInput" />
+          <input type="number" id="potionQuantity-{{ x }}" name="numInput" id="numInput" />
           <button class="button" (click)="addPotionsToInventory(x, potion)">
             Purchase {{ potion.name }}
           </button>

@@ -1,27 +1,33 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Order } from '../models/order';
+import { Observable } from 'rxjs';
+import { newOrder, Order } from '../models/order';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrderService {
-
   // order:Order = {
   //   // userid: 11,
   //   // username: "daniel",
   //   // password: "password",
   //   // isadmin: true,
   //   // orderaddress: "high st",
-  //   ordertotal: "",   
+  //   ordertotal: "",
   //   items: "",
   //   itemsquantity: "",
-    
+
   // }
 
+  placeOrder(newOrder: newOrder): Observable<newOrder> {
+    return this.http.post<newOrder>(
+      this.orderUrl,
+      newOrder
+    ) as Observable<newOrder>;
+  }
 
-
-  
-  // constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
+  private orderUrl = 'http://localhost:5555/data/order/insert';
   // private loginUrl = 'http://localhost:5555/data/user/login';
   // private addUrl = 'http://localhost:5555/data/user';
 
@@ -31,8 +37,4 @@ export class OrderService {
   //     userCreds
   //   ) as Observable<UserCreds>;
   // }
-
-
-
-
 }
