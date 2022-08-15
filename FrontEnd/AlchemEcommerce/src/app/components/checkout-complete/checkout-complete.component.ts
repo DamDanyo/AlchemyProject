@@ -14,7 +14,7 @@ export class CheckoutCompleteComponent implements OnInit {
   main() {
     this.router.navigateByUrl('/main');
   }
-  cart() {
-    this.router.navigateByUrl('/checkout');
+  logout() {
+    this.router.navigateByUrl('');
   }
 }

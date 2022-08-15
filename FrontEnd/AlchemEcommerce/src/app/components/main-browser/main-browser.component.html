@@ -22,6 +22,7 @@
         </table>
 
         <div>
+          <label for="numInput">Qty : </label>
           <input type="number" id="potionQuantity-{{ x }}" name="numInput" id="numInput" />
           <button class="button" (click)="addPotionsToInventory(x, potion)">
             Purchase {{ potion.name }}
