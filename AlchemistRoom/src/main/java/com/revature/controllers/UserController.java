@@ -76,7 +76,7 @@ public class UserController {
 	
 	//This method will be used to add a new user. isadmin will have to be set to null on Angular side w/ JSON object
 	//path is: POST - http://localhost:5555/data/user
-	@PostMapping
+	@PostMapping(value="/add")
 	public ResponseEntity addUser(@RequestBody AlchemistUser user) {
 		
 		AlchemistUser newUser = uDAO.save(user);
