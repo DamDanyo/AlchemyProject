@@ -19,7 +19,10 @@
   justify-items: center;
   border-radius: 10px;
   margin-left: 10%;
-  padding-bottom: 5px;
+  padding-bottom: 15px;
+  padding-left: 0;
+  box-shadow: rgb(0, 0, 0) 5px 5px 5px 0px, rgb(0, 0, 0) 4px 4px 15px 0px inset,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .li-wrapper li {
   display: inline;
@@ -27,8 +30,15 @@
   margin-left: 100px;
 }
 #logo-img {
-  padding-top: 15p;
+  padding: 15px;
+  box-shadow: rgb(0, 0, 0) 5px 5px 5px 0px, rgb(0, 0, 0) 4px 4px 15px 0px inset,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  margin-top: 15px;
 }
 button {
   font-family: "Arboreto";
+  margin-top: 15px;
+  box-shadow: rgb(0, 0, 0) 5px 5px 5px 0px, rgb(0, 0, 0) 4px 4px 15px 0px inset,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
