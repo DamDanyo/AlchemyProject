@@ -1,7 +1,7 @@
 .grid-container {
   display: inline-grid;
   position: relative;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   background-image: url(../../../assets/Imgs/brown-papyrus-paper.jpg);
   gap: 100px;
   background-attachment: fixed;
@@ -33,13 +33,10 @@ p {
 
 .pc-content-wrapper {
   position: relative;
-  -webkit-box-shadow: rgb(0, 0, 0) 5px 5px 5px 0px,
-    rgb(0, 0, 0) 4px 4px 15px 0px inset, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: rgb(0, 0, 0) 5px 5px 5px 0px, rgb(0, 0, 0) 4px 4px 15px 0px inset,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
-  opacity: 0.8;
   border-radius: 10px;
-  padding: 4%;
+  padding: 6%;
 }
 body {
   background-color: #18181a;

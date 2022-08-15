@@ -14,6 +14,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CookieModule } from 'ngx-cookie';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { RouterModule } from '@angular/router';
     MainBrowserComponent,
     MainNavbarComponent,
     CartComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
