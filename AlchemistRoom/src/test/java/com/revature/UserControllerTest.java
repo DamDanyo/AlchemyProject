@@ -4,48 +4,65 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyInt;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.extension.ParameterResolutionException;
+import org.junit.jupiter.api.extension.RegisterExtension;
+
 import org.mockito.Mockito;
 import org.mockito.stubbing.OngoingStubbing;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
 import com.revature.controllers.UserController;
 import com.revature.daos.UserDAO;
 import com.revature.models.AlchemistUser;
 
-public class UserControllerTest {
+
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
+
+
+
+	public class UserControllerTest{
 	
 	private UserDAO uDAO;
 	
 	
+	@Autowired
 	public UserControllerTest(UserDAO uDAO) {
 		super();
 		this.uDAO = uDAO;
 	}
 	
-	@SuppressWarnings("unchecked")
-	@Test
-	public void testGetUserGetsCalled() {
-		UserController mockController = Mockito.spy(new UserController(uDAO));
+	
+	
+	
+	//@SuppressWarnings("unchecked")
+	//@Test
+	//public void testGetUserGetsCalled() throws ParameterResolutionException{
+		//UserController mockController = Mockito.spy(new UserController(uDAO));
 		
-		OngoingStubbing<OngoingStubbing<AlchemistUser>> u = Mockito.when(((OngoingStubbing<AlchemistUser>) mockController.findById((anyInt()))).thenReturn(new AlchemistUser("test","test",false)));
+		//OngoingStubbing<OngoingStubbing<AlchemistUser>> u = Mockito.when(((OngoingStubbing<AlchemistUser>) mockController.findById((anyInt()))).thenReturn(new AlchemistUser("test","test",false)));
 		
-		assertNotNull(u);
-	}
+		//assertNotNull(u);
+	//}
 
 
-	@SuppressWarnings("unchecked")
+	
+	
 	@Test
-	public void testInsertUser(TestInfo test) throws ParameterResolutionException {
+	void testInsertUser() throws ParameterResolutionException {
 		
-		AlchemistUser mockUser = Mockito.spy(new AlchemistUser("testUsertest","testPassword",false));
+		AlchemistUser mockUser = Mockito.spy(new AlchemistUser("testets","testpass",false));
 		UserController mockController = Mockito.spy(new UserController(uDAO));
 		
-		ResponseEntity<List<AlchemistUser>> mockList = Mockito.mock(ResponseEntity.class);
+		@SuppressWarnings("unchecked")
+		List<AlchemistUser> mockList = Mockito.mock(ArrayList.class);
 		
 		mockList = mockController.getAllUsers();
 		Mockito.verify(mockController).getAllUsers();
@@ -59,8 +76,9 @@ public class UserControllerTest {
 		
 		int postInsert = ((List<AlchemistUser>) mockList).size();
 		
-		assertTrue(preInsert < postInsert);
-		
+		assertTrue(preInsert<postInsert);
 	}
+
+	
 	
 }

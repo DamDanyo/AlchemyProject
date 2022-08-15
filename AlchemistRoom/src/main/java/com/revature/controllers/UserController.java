@@ -1,5 +1,6 @@
 package com.revature.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -132,8 +133,9 @@ public class UserController {
 	}
 	
 	@GetMapping(value=("/allUsers"))
-	public ResponseEntity<List<AlchemistUser>> getAllUsers(){
-		return ResponseEntity.ok(uDAO.findAll());
+	public List<AlchemistUser> getAllUsers(){
+		List<AlchemistUser> list = uDAO.findAll();
+		return list;
 	}
 	
 	
